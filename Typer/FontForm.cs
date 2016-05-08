@@ -16,6 +16,7 @@ namespace Typer
         //string[] fontName;
         
         MainForm mainForm;
+        FontStyle style = FontStyle.Regular;
         public FontForm(MainForm mainForm)
         {
             this.mainForm = mainForm;
@@ -37,7 +38,7 @@ namespace Typer
             comboBox2.DataSource = data2;
             ///*
             ///set comboBox3 size items
-            int [] size = new int[10]{21,22,23,24,25,26,27,28,29,30};
+            int [] size = new int[10]{22,23,24,25,26,27,28,29,30,31};
             var data3 = new BindingSource { DataSource = size };
             comboBox3.DataSource = data3;
             ///*
@@ -159,6 +160,83 @@ namespace Typer
                         e.Graphics.DrawString(Convert.ToString(comboBox4.Items[e.Index]), f, Brushes.Yellow, e.Bounds.X + 20, e.Bounds.Y + 1);
                         break;
                 }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = comboBox1.Text;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            switch (comboBox2.Text)
+            {
+                case "常规":
+                    style = FontStyle.Regular;
+                    break;
+                case "倾斜":
+                    style = FontStyle.Italic;
+                    break;
+                case "粗体":
+                    style = FontStyle.Bold;
+                    break;
+                case "粗体倾斜":
+                    style = FontStyle.Italic | FontStyle.Bold;
+                    break;
+            }
+            textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                style = style | FontStyle.Strikeout;
+            }
+            else
+            {
+                style -= FontStyle.Strikeout;
+            }
+            textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox2.Checked)
+            {
+                style = style | FontStyle.Underline;
+            }
+            else
+            {
+                style -= FontStyle.Underline;
+            }
+            textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox4.Text)
+            {
+                case "黑":
+                    textBox1.ForeColor = Color.Black;
+                    break;
+                case "蓝":
+                    textBox1.ForeColor = Color.Blue;
+                    break;
+                case "红":
+                    textBox1.ForeColor = Color.Red;
+                    break;
+                case "黄":
+                    textBox1.ForeColor = Color.Yellow;
+                    break;
             }
         }
     }//FontForm

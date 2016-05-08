@@ -87,6 +87,10 @@ namespace Typer
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(textBox2.Text=="")
+            {
+                MessageBox.Show("请先出题再开始");
+            }
             second = 46;
             richTextBox1.ReadOnly = false;
             timer1.Start();
@@ -95,6 +99,12 @@ namespace Typer
         private void button4_Click(object sender, EventArgs e)
         {
             new FontForm(this).Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("用时"+(45 - second));
+            timer1.Stop();
         }
     }
 }
