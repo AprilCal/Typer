@@ -196,7 +196,7 @@ namespace Typer
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkBox1.Checked)
+            if (checkBox1.Checked)
             {
                 style = style | FontStyle.Strikeout;
             }
@@ -223,19 +223,20 @@ namespace Typer
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBox1.BackColor = textBox1.BackColor;
             switch (comboBox4.Text)
             {
                 case "黑":
-                    textBox1.ForeColor = Color.Black;
+                    this.textBox1.ForeColor = Color.Black;
                     break;
                 case "蓝":
-                    textBox1.ForeColor = Color.Blue;
+                    this.textBox1.ForeColor = Color.Blue;
                     break;
                 case "红":
-                    textBox1.ForeColor = Color.Red;
+                    this.textBox1.ForeColor = Color.Red;
                     break;
                 case "黄":
-                    textBox1.ForeColor = Color.Yellow;
+                    this.textBox1.ForeColor = Color.Yellow;
                     break;
             }
         }
