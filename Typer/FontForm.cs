@@ -37,8 +37,7 @@ namespace Typer
             comboBox2.DataSource = data2;
             ///*
             ///set comboBox3 size items
-            int [] size = new int[20]{11,12,13,14,15
-                ,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 };
+            int [] size = new int[10]{21,22,23,24,25,26,27,28,29,30};
             var data3 = new BindingSource { DataSource = size };
             comboBox3.DataSource = data3;
             ///*
@@ -67,6 +66,29 @@ namespace Typer
                 case "粗体倾斜":
                     style = FontStyle.Italic | FontStyle.Bold;
                     break;
+            }
+            switch(comboBox4.Text)
+            {
+                case "黑":
+                    mainForm.textBox2.ForeColor = Color.Black;
+                    break;
+                case "蓝":
+                    mainForm.textBox2.ForeColor = Color.Blue;
+                    break;
+                case "红":
+                    mainForm.textBox2.ForeColor = Color.Red;
+                    break;
+                case "黄":
+                    mainForm.textBox2.ForeColor = Color.Yellow;
+                    break;
+            }
+            if(checkBox1.Checked)
+            {
+                style = style | FontStyle.Strikeout;
+            }
+            if(checkBox2.Checked)
+            {
+                style = style | FontStyle.Underline;
             }
             mainForm.textBox2.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text)
                 , style);
