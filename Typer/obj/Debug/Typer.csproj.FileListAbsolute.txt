@@ -1,0 +1,10 @@
+D:\VSWorkSpace\project\Typer\Typer\bin\Debug\Typer.exe.config
+D:\VSWorkSpace\project\Typer\Typer\bin\Debug\Typer.exe
+D:\VSWorkSpace\project\Typer\Typer\bin\Debug\Typer.pdb
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.csprojResolveAssemblyReference.cache
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.MainForm.resources
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.Properties.Resources.resources
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.csproj.GenerateResource.Cache
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.exe
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.pdb
+D:\VSWorkSpace\project\Typer\Typer\obj\Debug\Typer.FontForm.resources
