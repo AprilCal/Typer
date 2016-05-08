@@ -103,8 +103,8 @@ namespace Typer
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("用时"+(45 - second));
             timer1.Stop();
+            MessageBox.Show("用时"+(45 - second));
         }
     }
 }

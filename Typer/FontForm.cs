@@ -17,6 +17,8 @@ namespace Typer
         
         MainForm mainForm;
         FontStyle style = FontStyle.Regular;
+        bool underline = false;
+        bool strikeout = false;
         public FontForm(MainForm mainForm)
         {
             this.mainForm = mainForm;
@@ -174,16 +176,60 @@ namespace Typer
             switch (comboBox2.Text)
             {
                 case "常规":
-                    style = FontStyle.Regular;
+                    if (strikeout && underline)
+                    {
+                        style = FontStyle.Regular | FontStyle.Strikeout | FontStyle.Underline;
+                    }
+                    else if (strikeout)
+                    {
+                        style = FontStyle.Regular | FontStyle.Strikeout;
+                    }
+                    else if(underline)
+                    {
+                        style = FontStyle.Regular | FontStyle.Underline;
+                    }
                     break;
                 case "倾斜":
-                    style = FontStyle.Italic;
+                    if (strikeout && underline)
+                    {
+                        style = FontStyle.Italic | FontStyle.Strikeout | FontStyle.Underline;
+                    }
+                    else if (strikeout)
+                    {
+                        style = FontStyle.Italic | FontStyle.Strikeout;
+                    }
+                    else if(underline)
+                    {
+                        style = FontStyle.Italic | FontStyle.Underline;
+                    }
                     break;
                 case "粗体":
-                    style = FontStyle.Bold;
+                    if (strikeout && underline)
+                    {
+                        style = FontStyle.Bold | FontStyle.Strikeout | FontStyle.Underline;
+                    }
+                    else if (strikeout)
+                    {
+                        style = FontStyle.Bold | FontStyle.Strikeout;
+                    }
+                    else if(underline)
+                    {
+                        style = FontStyle.Bold | FontStyle.Underline;
+                    }
                     break;
                 case "粗体倾斜":
-                    style = FontStyle.Italic | FontStyle.Bold;
+                    if (strikeout && underline)
+                    {
+                        style = FontStyle.Italic | FontStyle.Bold | FontStyle.Strikeout | FontStyle.Underline;
+                    }
+                    else if (strikeout)
+                    {
+                        style = FontStyle.Italic | FontStyle.Bold | FontStyle.Strikeout;
+                    }
+                    else if(underline)
+                    {
+                        style = FontStyle.Italic | FontStyle.Bold | FontStyle.Underline;
+                    }
                     break;
             }
             textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
@@ -199,10 +245,12 @@ namespace Typer
             if (checkBox1.Checked)
             {
                 style = style | FontStyle.Strikeout;
+                strikeout = true;
             }
             else
             {
                 style -= FontStyle.Strikeout;
+                strikeout = false;
             }
             textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
 
@@ -213,10 +261,12 @@ namespace Typer
             if(checkBox2.Checked)
             {
                 style = style | FontStyle.Underline;
+                underline = true;
             }
             else
             {
                 style -= FontStyle.Underline;
+                underline = false;
             }
             textBox1.Font = new Font(comboBox1.Text, Convert.ToInt32(comboBox3.Text), style);
         }
