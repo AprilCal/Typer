@@ -35,9 +35,7 @@ namespace Typer
                 timer1.Stop();
             }
             label3.Text = new DateTime(second * 10000000).ToLongTimeString();
-
-        
-    }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
